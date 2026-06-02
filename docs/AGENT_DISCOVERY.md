@@ -6,7 +6,7 @@ Implements common [isitagentready.com](https://isitagentready.com) checks for AI
 
 | Check | Location |
 |-------|----------|
-| Link headers (RFC 8288) | `src/middleware.ts` on `/` |
+| Link headers (RFC 8288) | `src/proxy.ts` on `/` |
 | API catalog (RFC 9727) | `/.well-known/api-catalog` |
 | Markdown negotiation | `Accept: text/markdown` on main pages |
 | Content Signals | `robots.txt` via `src/app/robots.txt/route.ts` |

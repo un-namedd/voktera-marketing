@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { homepageLinkHeader } from "@/lib/agent/constants";
 import { markdownNegotiablePaths } from "@/lib/agent/markdown-paths";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const accept = request.headers.get("accept") ?? "";
 
