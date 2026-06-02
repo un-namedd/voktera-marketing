@@ -33,6 +33,10 @@ Or set `VOKTERA_APP_ROOT` if the app repo is not a sibling folder.
 
 See [docs/VERCEL.md](docs/VERCEL.md) for domain split with the app project.
 
+## SEO
+
+See [docs/SEO.md](docs/SEO.md) for sitemap, Search Console, and structured data.
+
 ## Brand assets
 
 Static files under `public/brand/` — used by auth email templates at `https://voktera.com/brand/logo-email.png`.

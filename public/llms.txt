@@ -1,0 +1,18 @@
+# Voktera
+
+> Personal dashboard for food logging, gym tracking, and daily tasks.
+
+- Website: https://voktera.com
+- Web app: https://app.voktera.com
+- Support: support@voktera.com
+
+## Pages
+
+- Home: https://voktera.com/
+- Privacy: https://voktera.com/privacy
+- Terms: https://voktera.com/terms
+- Cookies: https://voktera.com/cookies
+
+## Product
+
+Voktera is a mobile-first progressive web app. Users sign in with email OTP. Features include meal and nutrient tracking, workout plans and logging, todos, and goals.

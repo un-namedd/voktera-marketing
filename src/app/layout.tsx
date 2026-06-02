@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { MarketingFooter } from "@/components/MarketingFooter";
 import { MarketingHeader } from "@/components/MarketingHeader";
-import { siteConfig } from "@/lib/site-config";
+import { rootMetadata } from "@/lib/seo/site-metadata";
 import "./globals.css";
 
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.serviceName,
-    template: `%s — ${siteConfig.serviceName}`,
-  },
-  description: siteConfig.tagline,
+  ...rootMetadata(),
   icons: {
     icon: [{ url: "/brand/logo-email.png", type: "image/png" }],
   },
-  metadataBase: new URL(siteConfig.websiteUrl),
+  ...(googleVerification
+    ? { verification: { google: googleVerification } }
+    : {}),
 };
 
 export default function RootLayout({

@@ -1,76 +1,109 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+import { CtaBand } from "@/components/CtaBand";
+import { DownloadSection } from "@/components/DownloadSection";
+import { FaqSection } from "@/components/FaqSection";
+import { FeatureSection } from "@/components/FeatureSection";
+import { HomeJsonLd } from "@/components/JsonLd";
+import { ProofStrip } from "@/components/ProofStrip";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { features, howItWorks } from "@/content/marketing/home";
+import { buildPageMetadata } from "@/lib/seo/site-metadata";
 import { siteConfig } from "@/lib/site-config";
 
-const features = [
-  {
-    title: "Food",
-    description:
-      "Log meals, track nutrients, scan labels, and hit daily targets without spreadsheet chaos.",
-  },
-  {
-    title: "Gym",
-    description:
-      "Run workout plans, log sets and reps, and see what you did last week at a glance.",
-  },
-  {
-    title: "Tasks",
-    description:
-      "Today’s todos, repeats, and goals in one hub — built for how you actually plan your week.",
-  },
-] as const;
+export const metadata: Metadata = buildPageMetadata({
+  title: siteConfig.seo.title,
+  description: siteConfig.seo.description,
+  path: "/",
+});
 
 export default function HomePage() {
   return (
-    <div className="relative overflow-hidden">
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(124,58,237,0.18),transparent)]"
-        aria-hidden
-      />
-      <section className="mx-auto max-w-5xl px-6 pb-20 pt-12 text-center md:pt-20">
-        <Image
-          src="/brand/logo-light.png"
-          alt=""
-          width={120}
-          height={120}
-          className="mx-auto mb-8 h-28 w-28 md:h-32 md:w-32"
-          priority
+    <>
+      <HomeJsonLd />
+      <div className="relative overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(124,58,237,0.22),transparent)]"
+          aria-hidden
         />
-        <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl">
-          {siteConfig.serviceName}
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-600">
-          {siteConfig.tagline}. A personal dashboard for nutrition, training, and
-          daily focus — mobile-first and installable.
-        </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href={`${siteConfig.appUrl}/login`}
-            className="inline-flex min-w-[200px] items-center justify-center rounded-xl bg-violet-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-violet-600/25 transition hover:bg-violet-500"
-          >
-            Try the app
-          </a>
-          <a
-            href="/privacy"
-            className="inline-flex min-w-[200px] items-center justify-center rounded-xl border border-zinc-300 bg-white px-8 py-3.5 text-base font-medium text-zinc-700 transition hover:border-zinc-400"
-          >
-            Privacy policy
-          </a>
-        </div>
-      </section>
-
-      <section className="mx-auto grid max-w-5xl gap-6 px-6 pb-24 md:grid-cols-3">
-        {features.map((feature) => (
-          <div
-            key={feature.title}
-            className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
-          >
-            <h2 className="text-lg font-semibold text-violet-700">{feature.title}</h2>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-              {feature.description}
+        <section className="mx-auto max-w-5xl px-6 pb-16 pt-10 text-center md:pt-16">
+          <RevealOnScroll>
+            <Image
+              src="/brand/logo-light.png"
+              alt=""
+              width={112}
+              height={112}
+              className="mx-auto mb-6 h-24 w-24 md:h-28 md:w-28"
+              priority
+            />
+            <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 md:text-5xl md:leading-tight">
+              Your personal dashboard for food, gym, and tasks
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600">
+              {siteConfig.tagline}. Track nutrition, log workouts, and manage your
+              day in one mobile-first app — installable from the browser.
             </p>
+            <div className="mt-10 flex flex-col items-center">
+              <DownloadSection compact />
+            </div>
+            <p className="mt-6">
+              <a href="#features" className="text-sm font-medium text-violet-600 hover:underline">
+                See what&apos;s inside ↓
+              </a>
+            </p>
+          </RevealOnScroll>
+        </section>
+
+        <ProofStrip />
+
+        <div id="features" className="scroll-mt-20">
+          {features.map((feature, index) => (
+            <FeatureSection
+              key={feature.id}
+              id={feature.id}
+              title={feature.title}
+              headline={feature.headline}
+              bullets={feature.bullets}
+              accent={feature.accent}
+              reverse={index % 2 === 1}
+            />
+          ))}
+        </div>
+
+        <section
+          id="how-it-works"
+          className="scroll-mt-20 border-t border-zinc-200/80 bg-zinc-50/80 px-6 py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-5xl">
+            <RevealOnScroll>
+              <h2 className="text-center text-3xl font-semibold tracking-tight text-zinc-900">
+                How it works
+              </h2>
+              <p className="mx-auto mt-3 max-w-lg text-center text-zinc-600">
+                Three steps from sign-in to your daily snapshot.
+              </p>
+            </RevealOnScroll>
+            <div className="mt-12 grid gap-8 md:grid-cols-3">
+              {howItWorks.map((step) => (
+                <RevealOnScroll key={step.step}>
+                  <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
+                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-violet-600 text-sm font-bold text-white">
+                      {step.step}
+                    </span>
+                    <h3 className="mt-4 text-lg font-semibold text-zinc-900">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                      {step.description}
+                    </p>
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
           </div>
-        ))}
-      </section>
-    </div>
+        </section>
+
+        <FaqSection />
+        <CtaBand />
+      </div>
+    </>
   );
 }
