@@ -1,30 +1,26 @@
-import { supabaseAuthIssuer } from "@/lib/agent/constants";
+import { agentPaths } from "@/lib/agent/constants";
+import {
+  jsonMetadataResponse,
+  oauthProtectedResourceMetadata,
+} from "@/lib/agent/oauth-metadata";
 import { siteConfig } from "@/lib/site-config";
 
+/** PRM for the marketing origin (RFC 9728). */
 export function GET() {
-  const issuer = supabaseAuthIssuer();
-  const resource = siteConfig.appUrl.replace(/\/$/, "");
+  const resource = siteConfig.websiteUrl.replace(/\/$/, "");
+  const metadata = oauthProtectedResourceMetadata(resource);
 
-  if (!issuer) {
-    return Response.json(
+  if (!metadata) {
+    return jsonMetadataResponse(
       {
-        resource,
+        error: "not_configured",
         message:
-          "Authorization server metadata requires NEXT_PUBLIC_SUPABASE_URL. Human sign-in: /login on the app.",
-        documentation: `${siteConfig.websiteUrl}/auth.md`,
+          "Set NEXT_PUBLIC_SUPABASE_URL on this Vercel project to publish OAuth protected resource metadata.",
+        documentation: `${siteConfig.websiteUrl}${agentPaths.authMd}`,
       },
-      { status: 503 },
+      503,
     );
   }
 
-  return Response.json(
-    {
-      resource,
-      authorization_servers: [issuer],
-      bearer_methods_supported: ["header"],
-      scopes_supported: ["openid", "email", "profile"],
-      resource_documentation: `${siteConfig.websiteUrl}/docs/agents`,
-    },
-    { headers: { "Cache-Control": "public, max-age=3600" } },
-  );
+  return jsonMetadataResponse(metadata);
 }

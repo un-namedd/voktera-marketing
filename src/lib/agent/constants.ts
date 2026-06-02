@@ -25,8 +25,4 @@ export function homepageLinkHeader(): string {
   ].join(", ");
 }
 
-export function supabaseAuthIssuer(): string | null {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, "");
-  if (!url) return null;
-  return `${url}/auth/v1`;
-}
+export { supabaseAuthIssuer } from "@/lib/agent/oauth-metadata";
