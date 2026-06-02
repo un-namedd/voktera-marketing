@@ -3,7 +3,7 @@
 > Personal dashboard for food logging, gym tracking, and daily tasks.
 
 - Website: https://voktera.com
-- Web app: https://app.voktera.com
+- Web app (sign in): https://app.voktera.com/login
 - Support: support@voktera.com
 
 ## Pages

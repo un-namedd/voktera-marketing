@@ -5,6 +5,7 @@ import {
   type ChangelogEntry,
 } from "@/content/marketing/changelog";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { siteConfig } from "@/lib/site-config";
 
 function ChangelogRelease({ entry }: { entry: ChangelogEntry }) {
   return (
@@ -56,7 +57,7 @@ export function ChangelogView() {
           What&apos;s new in Voktera — product updates for the web app and this
           site. For the app itself, open{" "}
           <a
-            href="https://app.voktera.com"
+            href={`${siteConfig.appUrl}/login`}
             className="font-medium text-violet-600 hover:underline"
           >
             app.voktera.com

@@ -37,6 +37,15 @@ Product updates: https://voktera.com/changelog
 
 Edit `src/content/marketing/changelog.ts` (see root `CHANGELOG.md`). New entries update the page and sitemap `lastModified` for `/changelog`.
 
+## App subdomain (`app.voktera.com`)
+
+The **marketing site** (`voktera.com`) is what you index in Search Console and Bing. The app is sign-in only:
+
+- Link to `https://app.voktera.com/login`, not the bare app root (avoids redirect/crawler noise).
+- App serves `robots.txt` with `Disallow: /` and `noindex` metadata so dashboards are not treated as public landing pages.
+
+If an SEO crawler reports **HTTP 4xx** on app URLs, check **Vercel → Project (app) → Security**: Bot Protection / Attack Challenge Mode can return **429** to automated clients. Allow verified search bots or relax protection for `/login`.
+
 ## Store badges
 
 When iOS/Android apps ship, set in `src/lib/site-config.ts`:

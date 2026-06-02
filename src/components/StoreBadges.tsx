@@ -56,12 +56,8 @@ export function StoreBadges({ className = "" }: { className?: string }) {
           </>
         ) : (
           <>
-            <span className="inline-block" aria-hidden={false}>
-              {appStore}
-            </span>
-            <span className="inline-block" aria-hidden={false}>
-              {googlePlay}
-            </span>
+            <span className="inline-block">{appStore}</span>
+            <span className="inline-block">{googlePlay}</span>
           </>
         )}
       </div>

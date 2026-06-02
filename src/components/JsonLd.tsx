@@ -41,7 +41,7 @@ export function HomeJsonLd() {
       price: "0",
       priceCurrency: "USD",
     },
-    url: siteConfig.appUrl,
+    url: `${siteConfig.appUrl}/login`,
     description: siteConfig.seo.description,
   };
 

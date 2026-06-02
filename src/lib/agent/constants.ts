@@ -21,7 +21,7 @@ export function homepageLinkHeader(): string {
     `<${base}${agentPaths.agentSkillsIndex}>; rel="describedby"`,
     `<${base}${agentPaths.authMd}>; rel="service-doc"`,
     `<${base}${agentPaths.llmsTxt}>; rel="describedby"`,
-    `<${siteConfig.appUrl}>; rel="service-doc"`,
+    `<${siteConfig.appUrl}/login>; rel="service-doc"`,
   ].join(", ");
 }
 
