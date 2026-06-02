@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #fafafa;
+  color: #18181b;
+}
+
+.legal-prose {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.legal-prose h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #18181b;
+}
+
+.legal-prose h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-prose p {
+  margin-bottom: 1rem;
+  color: #52525b;
+}
+
+.legal-prose ul,
+.legal-prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  color: #52525b;
+}
+
+.legal-prose li {
+  margin-bottom: 0.35rem;
+}
+
+.legal-prose a {
+  color: #7c3aed;
+  text-decoration: underline;
+}
+
+.legal-prose table {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.legal-prose th,
+.legal-prose td {
+  border: 1px solid #e4e4e7;
+  padding: 0.5rem 0.625rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.legal-prose th {
+  background: #f4f4f5;
+  color: #18181b;
+  font-weight: 600;
+}
+
+.legal-prose strong {
+  color: #18181b;
+  font-weight: 600;
+}
