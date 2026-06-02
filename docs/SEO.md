@@ -4,7 +4,7 @@
 
 - **Metadata** — titles, descriptions, keywords, Open Graph, Twitter cards (`src/lib/seo/site-metadata.ts`)
 - **Canonical URLs** — per page via `metadataBase` and `alternates.canonical`
-- **Sitemap** — https://voktera.com/sitemap.xml (`src/app/sitemap.ts`)
+- **Sitemap** — https://voktera.com/sitemap.xml (`src/app/sitemap.ts`) — includes `/`, `/changelog`, and legal pages
 - **robots.txt** — https://voktera.com/robots.txt (`src/app/robots.ts`)
 - **JSON-LD** — Organization, WebSite, SoftwareApplication, FAQPage on home (`src/components/JsonLd.tsx`)
 - **OG image** — generated at `/opengraph-image` (`src/app/opengraph-image.tsx`)
@@ -24,12 +24,18 @@
 
 Google chooses sitelinks automatically. This site helps by:
 
-- Clear header nav: Features, How it works, FAQ, Get started (`/#download`)
+- Clear header nav: Features, How it works, FAQ, Changelog, Get started (`/#download`)
 - Section IDs: `#features`, `#how-it-works`, `#faq`, `#download`
 - Separate legal URLs in footer
 - FAQ structured data on the home page
 
 Sitelinks are not guaranteed and can take weeks to appear.
+
+## Changelog
+
+Product updates: https://voktera.com/changelog
+
+Edit `src/content/marketing/changelog.ts` (see root `CHANGELOG.md`). New entries update the page and sitemap `lastModified` for `/changelog`.
 
 ## Store badges
 

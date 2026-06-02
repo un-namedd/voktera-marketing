@@ -11,6 +11,7 @@ const legalLinks = [
 const navLinks = [
   { href: "/#features", label: "Features" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/changelog", label: "Changelog" },
   { href: "/#download", label: "Download" },
 ] as const;
 

@@ -15,6 +15,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Changelog
+
+Public release notes: edit [`src/content/marketing/changelog.ts`](src/content/marketing/changelog.ts) (see [`CHANGELOG.md`](CHANGELOG.md)). Live at `/changelog`, included in `sitemap.xml`.
+
 ## Legal content sync
 
 Edit legal markdown in the **app** repo (`src/content/legal/`), then sync here:
