@@ -13,12 +13,15 @@
 ## Google Search Console (manual)
 
 1. Go to [Google Search Console](https://search.google.com/search-console).
-2. Add property **URL prefix** `https://voktera.com`.
+2. Add property **URL prefix** `https://voktera.com` (not `app.voktera.com`).
 3. Verify ownership:
    - **DNS** (recommended on Cloudflare), or
    - Set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` in Vercel to the meta tag value from Google, redeploy.
-4. Submit sitemap: `https://voktera.com/sitemap.xml`.
-5. Use **URL inspection** on `https://voktera.com/` → **Request indexing** after major launches.
+4. **Sitemaps** (left menu) → add `https://voktera.com/sitemap.xml` → Submit.  
+   URL Inspection may still say “No referring sitemaps” for an old crawl; that only means *that* URL was not found via the sitemap on *that* visit. Submitting the sitemap is still required.
+5. After the rebrand, run **URL inspection** on `https://voktera.com/` → **Request indexing**.  
+   Google may show **“Flamios”** in search for days or weeks until it recrawls; the live site is already **Voktera** (old login page cache).
+6. Optional: **Removals** → temporary removal of outdated cache for `https://voktera.com/` if the wrong title/snippet is urgent.
 
 ## Sitelinks
 

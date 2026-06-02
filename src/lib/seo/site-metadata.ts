@@ -12,14 +12,15 @@ export function buildPageMetadata({
   path: string;
   noIndex?: boolean;
 }): Metadata {
-  const url = path === "/" ? siteConfig.websiteUrl : `${siteConfig.websiteUrl}${path}`;
+  const canonical =
+    path === "/" ? siteConfig.websiteUrl : `${siteConfig.websiteUrl}${path}`;
 
   return {
     title,
     description,
     keywords: [...siteConfig.seo.keywords],
     alternates: {
-      canonical: path,
+      canonical,
     },
     robots: noIndex
       ? { index: false, follow: false }
@@ -31,7 +32,7 @@ export function buildPageMetadata({
     openGraph: {
       type: "website",
       locale: "en_CA",
-      url,
+      url: canonical,
       siteName: siteConfig.serviceName,
       title,
       description,
@@ -45,6 +46,8 @@ export function buildPageMetadata({
 }
 
 export function rootMetadata(): Metadata {
+  const canonical = siteConfig.websiteUrl;
+
   return {
     metadataBase: new URL(siteConfig.websiteUrl),
     title: {
@@ -53,6 +56,9 @@ export function rootMetadata(): Metadata {
     },
     description: siteConfig.seo.description,
     keywords: [...siteConfig.seo.keywords],
+    alternates: {
+      canonical,
+    },
     applicationName: siteConfig.serviceName,
     authors: [{ name: siteConfig.operatorLegalName }],
     creator: siteConfig.serviceName,
@@ -60,7 +66,7 @@ export function rootMetadata(): Metadata {
     openGraph: {
       type: "website",
       locale: "en_CA",
-      url: siteConfig.websiteUrl,
+      url: canonical,
       siteName: siteConfig.serviceName,
       title: siteConfig.seo.title,
       description: siteConfig.seo.description,
