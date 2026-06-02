@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { MarketingFooter } from "@/components/MarketingFooter";
 import { MarketingHeader } from "@/components/MarketingHeader";
+import { WebMcpProvider } from "@/components/WebMcpProvider";
 import { rootMetadata } from "@/lib/seo/site-metadata";
 import "./globals.css";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <MarketingHeader />
         <main className="flex-1">{children}</main>
         <MarketingFooter />
+        <WebMcpProvider />
         <Analytics />
       </body>
     </html>

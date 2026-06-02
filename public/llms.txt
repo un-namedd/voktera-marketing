@@ -10,6 +10,9 @@
 
 - Home: https://voktera.com/
 - Changelog: https://voktera.com/changelog
+- Agents / API discovery: https://voktera.com/docs/agents
+- API catalog: https://voktera.com/.well-known/api-catalog
+- auth.md: https://voktera.com/auth.md
 - Privacy: https://voktera.com/privacy
 - Terms: https://voktera.com/terms
 - Cookies: https://voktera.com/cookies

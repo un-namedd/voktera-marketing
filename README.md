@@ -41,6 +41,10 @@ See [docs/VERCEL.md](docs/VERCEL.md) for domain split with the app project.
 
 See [docs/SEO.md](docs/SEO.md) for sitemap, Search Console, and structured data.
 
+## Agent discovery
+
+See [docs/AGENT_DISCOVERY.md](docs/AGENT_DISCOVERY.md). Set `NEXT_PUBLIC_SUPABASE_URL` on Vercel for OAuth/OIDC well-known endpoints.
+
 ## Brand assets
 
 Static files under `public/brand/` — used by auth email templates at `https://voktera.com/brand/logo-email.png`.
