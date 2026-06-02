@@ -18,6 +18,10 @@ export const siteConfig = {
   supabaseProjectRegion: "East US (Ohio), United States",
   governingLaw: "the Province of Ontario and the federal laws of Canada",
   tagline: "Food, gym, and tasks in one place",
+  /** Descriptive alt text for brand images (Bing/Google image SEO). */
+  logoAltShort: "Voktera logo",
+  logoAlt:
+    "Voktera logo — personal dashboard app for meal tracking, workouts, and daily tasks",
   seo: {
     title: "Voktera — Personal dashboard for food, gym, and tasks",
     description:

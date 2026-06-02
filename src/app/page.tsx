@@ -30,7 +30,7 @@ export default function HomePage() {
           <RevealOnScroll>
             <Image
               src="/brand/logo-light.png"
-              alt=""
+              alt={siteConfig.logoAlt}
               width={112}
               height={112}
               className="mx-auto mb-6 h-24 w-24 md:h-28 md:w-28"

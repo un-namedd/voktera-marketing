@@ -16,7 +16,7 @@ export function MarketingHeader() {
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <Image
             src="/brand/logo-email.png"
-            alt=""
+            alt={siteConfig.logoAltShort}
             width={36}
             height={36}
             className="h-9 w-9"
