@@ -2,7 +2,7 @@ import { proofItems } from "@/content/marketing/home";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 function ProofIcon({ type }: { type: (typeof proofItems)[number]["icon"] }) {
-  const className = "h-6 w-6 text-violet-600";
+  const className = "h-6 w-6 text-accent-purple";
   switch (type) {
     case "layers":
       return (
@@ -58,16 +58,16 @@ function ProofIcon({ type }: { type: (typeof proofItems)[number]["icon"] }) {
 
 export function ProofStrip() {
   return (
-    <section className="border-y border-zinc-200/80 bg-white/80 backdrop-blur-sm">
+    <section className="border-y border-card-border/80 bg-card/50 backdrop-blur-sm">
       <div className="mx-auto grid max-w-5xl gap-8 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
         {proofItems.map((item) => (
           <RevealOnScroll key={item.label}>
             <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-              <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-violet-100">
+              <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl border border-card-border bg-card/80">
                 <ProofIcon type={item.icon} />
               </div>
-              <p className="font-semibold text-zinc-900">{item.label}</p>
-              <p className="mt-1 text-sm text-zinc-600">{item.description}</p>
+              <p className="font-semibold text-text">{item.label}</p>
+              <p className="mt-1 text-sm text-muted">{item.description}</p>
             </div>
           </RevealOnScroll>
         ))}

@@ -28,22 +28,22 @@ export function FeatureSection({
           <div
             className={`flex min-h-[200px] flex-1 items-center justify-center rounded-3xl bg-gradient-to-br p-10 ${accent}`}
           >
-            <span className="text-5xl font-bold tracking-tight text-violet-700/90 md:text-6xl">
+            <span className="text-5xl font-bold tracking-tight text-accent-purple/90 md:text-6xl">
               {title}
             </span>
           </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold uppercase tracking-wide text-violet-600">
+          <div className="flex-1 rounded-2xl border border-card-border/80 bg-card/90 p-6 shadow-lg backdrop-blur-sm sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent-purple">
               {title}
             </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 md:text-3xl">
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-text md:text-3xl">
               {headline}
             </h2>
             <ul className="mt-6 space-y-3">
               {bullets.map((bullet) => (
-                <li key={bullet} className="flex gap-3 text-zinc-600">
+                <li key={bullet} className="flex gap-3 text-muted">
                   <span
-                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500"
+                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-purple"
                     aria-hidden
                   />
                   <span>{bullet}</span>
@@ -52,7 +52,7 @@ export function FeatureSection({
             </ul>
             <Link
               href={`${siteConfig.appUrl}/login`}
-              className="mt-8 inline-flex text-sm font-semibold text-violet-600 hover:text-violet-500"
+              className="mt-8 inline-flex text-sm font-semibold text-accent-purple hover:opacity-80"
             >
               Open the app →
             </Link>

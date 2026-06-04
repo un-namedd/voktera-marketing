@@ -24,50 +24,59 @@ const links = [
 
 export default function AgentsDocPage() {
   return (
-    <article className="mx-auto max-w-2xl px-6 py-12">
-      <Link href="/" className="text-sm font-medium text-violet-600 hover:underline">
+    <article className="legal-prose mx-auto max-w-2xl px-6 py-12">
+      <Link href="/" className="text-sm font-medium text-accent-purple hover:underline">
         ← Home
       </Link>
-      <h1 className="mt-4 text-3xl font-semibold text-zinc-900">Agents &amp; API discovery</h1>
-      <p className="mt-4 text-zinc-600">
+      <h1 className="mt-4 text-3xl font-semibold text-text">Agents &amp; API discovery</h1>
+      <p className="mt-4 text-muted">
         voktera.com publishes discovery metadata for automated agents. The product API runs on{" "}
-        <a href={siteConfig.appUrl} className="text-violet-600 hover:underline">
+        <a href={siteConfig.appUrl} className="text-accent-purple hover:underline">
           {siteConfig.appUrl.replace(/^https?:\/\//, "")}
         </a>
         .
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-zinc-900">Well-known resources</h2>
+      <h2 className="mt-10 text-xl font-semibold text-text">Well-known resources</h2>
       <ul className="mt-4 space-y-2 text-sm">
         {links.map((link) => (
           <li key={link.href}>
-            <a href={link.href} className="font-medium text-violet-600 hover:underline">
+            <a href={link.href} className="font-medium text-accent-purple hover:underline">
               {link.label}
             </a>
-            <span className="text-zinc-500"> — {link.href}</span>
+            <span className="text-muted"> — {link.href}</span>
           </li>
         ))}
       </ul>
 
-      <h2 id="webmcp" className="mt-10 text-xl font-semibold text-zinc-900">
+      <h2 id="webmcp" className="mt-10 text-xl font-semibold text-text">
         WebMCP
       </h2>
-      <p className="mt-3 text-sm text-zinc-600">
+      <p className="mt-3 text-sm text-muted">
         When supported, this site registers browser tools via{" "}
-        <code className="rounded bg-zinc-100 px-1">navigator.modelContext</code>: open app,
-        view changelog, fetch API catalog.
+        <code className="rounded border border-card-border bg-card/80 px-1 text-text">
+          navigator.modelContext
+        </code>
+        : open app, view changelog, fetch API catalog.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-zinc-900">Markdown for agents</h2>
-      <p className="mt-3 text-sm text-zinc-600">
-        Send <code className="rounded bg-zinc-100 px-1">Accept: text/markdown</code> on HTML pages
-        to receive a markdown representation with <code>Content-Type: text/markdown</code>.
+      <h2 className="mt-10 text-xl font-semibold text-text">Markdown for agents</h2>
+      <p className="mt-3 text-sm text-muted">
+        Send{" "}
+        <code className="rounded border border-card-border bg-card/80 px-1 text-text">
+          Accept: text/markdown
+        </code>{" "}
+        on HTML pages to receive a markdown representation with{" "}
+        <code className="rounded border border-card-border bg-card/80 px-1 text-text">
+          Content-Type: text/markdown
+        </code>
+        .
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-zinc-900">DNS-AID</h2>
-      <p className="mt-3 text-sm text-zinc-600">
+      <h2 className="mt-10 text-xl font-semibold text-text">DNS-AID</h2>
+      <p className="mt-3 text-sm text-muted">
         DNS-based agent discovery (DNS-AID) is configured at the DNS provider. See{" "}
-        <Link href="/docs/dns-aid" className="text-violet-600 hover:underline">
+        <Link href="/docs/dns-aid" className="text-accent-purple hover:underline">
           DNS-AID setup
         </Link>
         .

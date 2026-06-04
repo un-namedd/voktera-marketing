@@ -13,7 +13,7 @@ export function DownloadSection({
       <StoreBadges />
       <a
         href={`${siteConfig.appUrl}/login`}
-        className={`mx-auto mt-6 flex items-center justify-center rounded-xl bg-violet-600 font-semibold text-white shadow-lg shadow-violet-600/25 transition hover:bg-violet-500 ${
+        className={`mx-auto mt-6 flex items-center justify-center rounded-xl bg-accent-purple font-semibold text-white shadow-lg shadow-accent-purple/25 transition hover:opacity-90 ${
           compact
             ? "min-w-[200px] px-8 py-3.5 text-base"
             : "w-full max-w-sm px-8 py-4 text-lg sm:w-auto"

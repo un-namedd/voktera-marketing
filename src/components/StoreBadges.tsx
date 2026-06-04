@@ -62,7 +62,7 @@ export function StoreBadges({ className = "" }: { className?: string }) {
         )}
       </div>
       {!enabled && (
-        <p className="mt-2 text-center text-xs text-zinc-500">
+        <p className="mt-2 text-center text-xs text-muted">
           iOS and Android apps — coming soon
         </p>
       )}
