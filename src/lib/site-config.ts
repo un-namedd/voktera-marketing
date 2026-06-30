@@ -8,13 +8,16 @@ export const siteConfig = {
   operatorAddress: "29 Sara Dr., Welland, Ontario, Canada",
   websiteUrl: "https://voktera.com",
   appUrl: "https://app.voktera.com",
+  uniUrl: "https://uni.voktera.com",
+  uniServiceName: "UoG Degree Planner",
+  uniServiceFullName: "UoG Degree Planner",
   /** Set when iOS app is live on the App Store */
   appStoreUrl: "" as string,
   /** Set when Android app is live on Google Play */
   playStoreUrl: "" as string,
   contactEmail: "support@voktera.com",
   privacyEmail: "privacy@voktera.com",
-  effectiveDate: "May 31, 2026",
+  effectiveDate: "June 30, 2026",
   supabaseProjectRegion: "East US (Ohio), United States",
   governingLaw: "the Province of Ontario and the federal laws of Canada",
   tagline: "Food, gym, and tasks in one place",

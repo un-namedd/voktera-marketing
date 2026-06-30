@@ -1,6 +1,14 @@
 **Effective date:** {{effectiveDate}}
 
-This Cookie Policy explains how **{{operatorLegalName}}** uses cookies and similar technologies on **{{serviceFullName}}** at {{websiteUrl}}.
+This Cookie Policy explains how **{{operatorLegalName}}** uses cookies and similar technologies across our websites and apps:
+
+| Service | URL |
+|---------|-----|
+| **{{serviceFullName}}** (marketing) | {{websiteUrl}} |
+| **{{serviceFullName}}** (personal dashboard) | {{appUrl}} |
+| **{{uniServiceFullName}}** | {{uniUrl}} |
+
+The canonical copy is published at {{websiteUrl}}/cookies.
 
 For how we handle personal information generally, see our [Privacy Policy]({{websiteUrl}}/privacy).
 
@@ -12,51 +20,49 @@ Cookies are small text files stored on your device when you visit a website. Sim
 
 We use cookies and local storage to:
 
-- Keep you signed in.
+- Keep you signed in (where you use an account).
 - Remember your theme and appearance preferences.
-- Record your cookie consent choice.
-- Optionally measure traffic and performance (only if you accept analytics).
+- Record that you saw our cookie notice.
+- Store planner layout and courses locally when you use the degree planner without signing in.
 
-We do **not** use advertising or cross-site tracking cookies.
+We do **not** use analytics, advertising, or cross-site tracking cookies.
 
-## Types of cookies we use
+## Voktera personal dashboard ({{appUrl}})
 
 | Name / type | Category | Purpose | Duration | Required? |
 |-------------|----------|---------|----------|-----------|
 | Supabase auth cookies (`sb-*`, session) | Strictly necessary | Authentication and session security | Session / per Supabase | Yes — needed to log in |
 | `voktera-theme` | Functional | Remember light/dark theme and accent color | Up to 1 year | No — improves experience |
-| `voktera-cookie-consent` (localStorage) | Strictly necessary | Store your cookie banner choice | Until you clear browser data | Yes — to honor your choice |
-| Vercel Analytics | Analytics | Aggregated page views and usage | Per [Vercel](https://vercel.com/legal/privacy-policy) | **No — opt-in only** |
-| Vercel Speed Insights | Analytics | Performance metrics | Per Vercel | **No — opt-in only** |
+| `voktera-cookie-consent` (localStorage) | Strictly necessary | Store that you acknowledged this notice | Until you clear browser data | Yes — to honor your choice |
 
-## Cookie banner choices
+## UoG Degree Planner ({{uniUrl}})
 
-When you first visit, you can choose:
+| Name / type | Category | Purpose | Duration | Required? |
+|-------------|----------|---------|----------|-----------|
+| Supabase auth cookies (`sb-*`, session) | Strictly necessary | Authentication when you sign in for cloud sync | Session / per Supabase | Yes — needed to log in |
+| `uog-degree-planner` (localStorage) | Functional | Store your plan, terms, theme, and layout locally | Until you clear browser data | No — core offline experience |
+| `voktera-cookie-consent` (localStorage) | Strictly necessary | Store that you acknowledged this notice | Until you clear browser data | Yes — to honor your choice |
 
-- **Accept all** — strictly necessary cookies plus analytics (Vercel Analytics and Speed Insights).
-- **Necessary only** — only cookies required for login, security, and remembering your consent and theme.
+## Cookie notice
 
-You can change your mind anytime in **Settings → Legal → Manage cookie preferences** (when signed in), or clear site data in your browser.
+When you first visit a Service that uses cookies, we show a short notice explaining the cookies above. Tap **Got it** to dismiss it. On the dashboard you can show the notice again in **Settings → Legal → Manage cookie preferences** (when signed in), or clear site data in your browser.
 
 ## Third-party cookies
 
-Our hosting and analytics providers may set or read cookies when their services load. We do not control third-party cookies directly. See:
+Our auth and hosting providers may set or read cookies when their services load. We do not control third-party cookies directly. See:
 
 - Supabase: https://supabase.com/privacy  
 - Vercel: https://vercel.com/legal/privacy-policy  
+- Google (planner sign-in only): https://policies.google.com/privacy  
 
 ## How to manage cookies in your browser
 
-Most browsers let you block or delete cookies in settings. If you block strictly necessary cookies, parts of the Service (including sign-in) may not work.
+Most browsers let you block or delete cookies in settings. If you block strictly necessary cookies, parts of our Services (including sign-in) may not work.
 
 - [Chrome](https://support.google.com/chrome/answer/95647)  
 - [Firefox](https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop)  
 - [Safari](https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac)  
 - [Edge](https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09)  
-
-## Do Not Track
-
-Some browsers send “Do Not Track” signals. There is no universal standard for how sites must respond. We treat analytics as **off** unless you opt in through our cookie banner.
 
 ## Updates
 
